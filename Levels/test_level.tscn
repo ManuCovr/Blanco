@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://dmmkegp00cl18"]
+[gd_scene load_steps=37 format=4 uid="uid://dmmkegp00cl18"]
 
 [ext_resource type="Texture2D" uid="uid://cnb6vef35n3ad" path="res://Assets/Tiles.png" id="1_eqpw1"]
 [ext_resource type="Script" path="res://Levels/GameManager.gd" id="1_oxljc"]
@@ -19,13 +19,48 @@
 [ext_resource type="Script" path="res://Levels/area_2d.gd" id="16_l28co"]
 [ext_resource type="AudioStream" uid="uid://qglsrp2nn18g" path="res://audio/music/Wav/Pixel 12.wav" id="17_cb56x"]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_a2xgb"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r63sd"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_a3yof"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7rt4b"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3dm7e"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8qdkg"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1x8c3"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ooy13"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mrd4q"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4oos6"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yfy13"]
 texture = ExtResource("1_eqpw1")
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_a2xgb")
 1:0/0 = 0
+1:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_a3yof")
 2:0/0 = 0
+2:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_3dm7e")
 3:0/0 = 0
+3:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_1x8c3")
 4:0/0 = 0
+4:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_mrd4q")
 6:0/0 = 0
 7:0/0 = 0
 9:0/0 = 0
@@ -39,12 +74,16 @@ texture = ExtResource("1_eqpw1")
 21:0/0 = 0
 22:0/0 = 0
 0:1/0 = 0
+0:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_r63sd")
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
+2:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_8qdkg")
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
+3:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ooy13")
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0 = 0
+4:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_4oos6")
 4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:1/next_alternative_id = 4
 5:1/0 = 0
@@ -547,6 +586,7 @@ texture = ExtResource("1_eqpw1")
 18:24/0 = 0
 19:24/0 = 0
 1:1/0 = 0
+1:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_7rt4b")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mqi2j"]
@@ -1715,6 +1755,7 @@ texture = ExtResource("5_ltf4r")
 4:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_co2n3"]
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_yfy13")
 sources/1 = SubResource("TileSetAtlasSource_mqi2j")
@@ -1733,6 +1774,12 @@ script = ExtResource("1_oxljc")
 [node name="TestLevel" type="Node2D" parent="."]
 process_mode = 1
 script = ExtResource("1_s23v0")
+
+[node name="Player" parent="TestLevel" instance=ExtResource("2_t7emj")]
+position = Vector2(13, 72)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="TestLevel/Player"]
+remote_path = NodePath("../../Camera2D")
 
 [node name="TileMap" type="TileMap" parent="TestLevel"]
 tile_set = SubResource("TileSet_co2n3")
@@ -1905,12 +1952,6 @@ text = "Space
 bar"
 horizontal_alignment = 1
 
-[node name="Player" parent="TestLevel" instance=ExtResource("2_t7emj")]
-position = Vector2(13, 72)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="TestLevel/Player"]
-remote_path = NodePath("../../Camera2D")
-
 [node name="Camera2D" type="Camera2D" parent="TestLevel"]
 position = Vector2(13, 72)
 offset = Vector2(0, -15)
@@ -1931,6 +1972,7 @@ motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(640, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="TestLevel/Background/ParallaxLayer"]
+modulate = Color(0.466181, 0.466181, 0.466181, 1)
 position = Vector2(120, 30)
 texture = ExtResource("13_44pyk")
 
@@ -1939,6 +1981,7 @@ motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(768, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="TestLevel/Background/ParallaxLayer2"]
+modulate = Color(0.830335, 0.830335, 0.830335, 1)
 position = Vector2(120, 30)
 texture = ExtResource("14_wrpbb")
 
@@ -1947,6 +1990,7 @@ motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(768, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="TestLevel/Background/ParallaxLayer3"]
+modulate = Color(0.831373, 0.831373, 0.831373, 1)
 position = Vector2(120, -242)
 texture = ExtResource("15_smbui")
 
@@ -1961,6 +2005,16 @@ shape = SubResource("RectangleShape2D_srt6m")
 stream = ExtResource("17_cb56x")
 volume_db = -13.0
 autoplay = true
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="TestLevel"]
+rotation = 0.488692
+color = Color(0.868973, 0.82298, 0.659899, 1)
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 13.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="TestLevel"]
+color = Color(0.552956, 0.552956, 0.552956, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

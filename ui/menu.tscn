@@ -1,0 +1,123 @@
+[gd_scene load_steps=9 format=3 uid="uid://wjfw4tegj1bi"]
+
+[ext_resource type="Script" path="res://ui/menu.gd" id="1_ylvjb"]
+[ext_resource type="Texture2D" uid="uid://dy8tfufj60sy7" path="res://ui/istockphoto-1354982067-612x612.jpg" id="2_sgu7l"]
+[ext_resource type="FontFile" uid="uid://c61hu64w8hokj" path="res://Art/Random/Qapixa-5y9Pa.ttf" id="3_t8pqg"]
+[ext_resource type="PackedScene" uid="uid://bh7uxnxwperty" path="res://ui/fade.tscn" id="4_yfm6m"]
+[ext_resource type="PackedScene" uid="uid://c5w2ol0srjdjh" path="res://ui/settings.tscn" id="5_7jr1b"]
+[ext_resource type="AudioStream" uid="uid://cb8wqvwq1pxtn" path="res://audio/music/mp3/Pixel 2.mp3" id="6_3rfd3"]
+[ext_resource type="AudioStream" uid="uid://byyaejm3n1thr" path="res://audio/sounds/25_orc_walk_stone_2.wav" id="7_j7y0j"]
+[ext_resource type="AudioStream" uid="uid://dm8r3cm2kmj40" path="res://audio/sounds/selec.mp3" id="8_nbp2j"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ylvjb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sgu7l")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -22.0
+offset_right = 146.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_t8pqg")
+theme_override_font_sizes/font_size = 40
+text = "Blanco"
+horizontal_alignment = 1
+justification_flags = 161
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -101.0
+offset_right = 152.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.875379, 0.791964, 0.364438, 1)
+theme_override_fonts/font = ExtResource("3_t8pqg")
+theme_override_font_sizes/font_size = 12
+text = "Start
+"
+flat = true
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
+theme_override_fonts/font = ExtResource("3_t8pqg")
+theme_override_font_sizes/font_size = 12
+text = "Options"
+flat = true
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
+theme_override_fonts/font = ExtResource("3_t8pqg")
+theme_override_font_sizes/font_size = 12
+text = "Quit
+"
+flat = true
+
+[node name="fade" parent="." instance=ExtResource("4_yfm6m")]
+visible = false
+layout_mode = 1
+
+[node name="Timer" type="Timer" parent="fade"]
+
+[node name="Settings" parent="." instance=ExtResource("5_7jr1b")]
+visible = false
+layout_mode = 1
+
+[node name="menuSOng" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_3rfd3")
+volume_db = -16.0
+autoplay = true
+
+[node name="hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_j7y0j")
+volume_db = 1.0
+pitch_scale = 0.8
+
+[node name="press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_nbp2j")
+volume_db = -8.0
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="fade/Timer" to="." method="_on_timer_timeout"]

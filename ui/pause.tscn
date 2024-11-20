@@ -1,0 +1,193 @@
+[gd_scene load_steps=11 format=3 uid="uid://du7s6m5lqjhn2"]
+
+[ext_resource type="Script" path="res://ui/pause.gd" id="1_umtxf"]
+[ext_resource type="FontFile" uid="uid://c61hu64w8hokj" path="res://Art/Random/Qapixa-5y9Pa.ttf" id="2_fl7ry"]
+[ext_resource type="Shader" path="res://ui/pause.gdshader" id="2_hw8he"]
+[ext_resource type="AudioStream" uid="uid://byyaejm3n1thr" path="res://audio/sounds/25_orc_walk_stone_2.wav" id="4_iiefv"]
+[ext_resource type="AudioStream" uid="uid://dm8r3cm2kmj40" path="res://audio/sounds/selec.mp3" id="5_vvqtv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_otd1y"]
+shader = ExtResource("2_hw8he")
+shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkirl"]
+bg_color = Color(0.26, 0.191057, 0.1482, 0.741176)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0451217, 0.0135419, 0.0123347, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Animation" id="Animation_4h7ep"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d4t0v"]
+resource_name = "blur"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_62w8b"]
+_data = {
+"RESET": SubResource("Animation_4h7ep"),
+"blur": SubResource("Animation_d4t0v")
+}
+
+[node name="Pause" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_umtxf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_otd1y")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -74.5
+offset_right = 74.0
+offset_bottom = 74.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bkirl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 16.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fl7ry")
+theme_override_font_sizes/font_size = 24
+text = "-- PAUSE --"
+horizontal_alignment = 1
+
+[node name="resume" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
+theme_override_fonts/font = ExtResource("2_fl7ry")
+theme_override_font_sizes/font_size = 12
+text = "RESUME"
+flat = true
+
+[node name="restart" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
+theme_override_fonts/font = ExtResource("2_fl7ry")
+theme_override_font_sizes/font_size = 12
+text = "RESTART"
+flat = true
+
+[node name="options" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
+theme_override_fonts/font = ExtResource("2_fl7ry")
+theme_override_font_sizes/font_size = 12
+text = "OPTIONS"
+flat = true
+
+[node name="exit" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
+theme_override_fonts/font = ExtResource("2_fl7ry")
+theme_override_font_sizes/font_size = 12
+text = "EXIT THE GAME"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_62w8b")
+}
+
+[node name="hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_iiefv")
+volume_db = 4.0
+pitch_scale = 0.8
+
+[node name="press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vvqtv")
+volume_db = -6.0
+
+[connection signal="mouse_entered" from="Panel/VBoxContainer/resume" to="." method="_on_resume_mouse_entered"]
+[connection signal="pressed" from="Panel/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/restart" to="." method="_on_restart_mouse_entered"]
+[connection signal="pressed" from="Panel/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/options" to="." method="_on_options_mouse_entered"]
+[connection signal="pressed" from="Panel/VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="pressed" from="Panel/VBoxContainer/exit" to="." method="_on_exit_pressed"]

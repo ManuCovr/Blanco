@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjgkk1cesmra6"]
+
+[ext_resource type="Script" path="res://ui/hp_manager.gd" id="1_dqrkw"]
+[ext_resource type="PackedScene" uid="uid://c2t8ifokcycep" path="res://ui/hp_label.tscn" id="2_hd0tq"]
+
+[node name="HpManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dqrkw")
+hp_label = ExtResource("2_hd0tq")
+dmg_color = Color(0.961518, 4.45209e-06, 9.62615e-07, 1)

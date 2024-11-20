@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://du7s6m5lqjhn2"]
+[gd_scene load_steps=15 format=3 uid="uid://du7s6m5lqjhn2"]
 
 [ext_resource type="Script" path="res://ui/pause.gd" id="1_umtxf"]
 [ext_resource type="FontFile" uid="uid://c61hu64w8hokj" path="res://Art/Random/Qapixa-5y9Pa.ttf" id="2_fl7ry"]
@@ -22,6 +22,14 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfmmb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_583ag"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2r2f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1hfn"]
 
 [sub_resource type="Animation" id="Animation_4h7ep"]
 length = 0.001
@@ -142,6 +150,7 @@ layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
 theme_override_fonts/font = ExtResource("2_fl7ry")
 theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nfmmb")
 text = "RESUME"
 flat = true
 
@@ -150,6 +159,7 @@ layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
 theme_override_fonts/font = ExtResource("2_fl7ry")
 theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_583ag")
 text = "RESTART"
 flat = true
 
@@ -158,6 +168,7 @@ layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
 theme_override_fonts/font = ExtResource("2_fl7ry")
 theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e2r2f")
 text = "OPTIONS"
 flat = true
 
@@ -166,6 +177,7 @@ layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
 theme_override_fonts/font = ExtResource("2_fl7ry")
 theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j1hfn")
 text = "EXIT THE GAME"
 flat = true
 

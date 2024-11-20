@@ -34,6 +34,7 @@ folder_colors={
 "res://Levels/": "yellow",
 "res://Overlap/": "purple",
 "res://audio/": "blue",
+"res://particles/": "red",
 "res://ui/": "green"
 }
 

@@ -11,6 +11,7 @@ class_name GroundState
 @onready var sfx_jump: AudioStreamPlayer = $"../../SFXJump"
 @onready var attack_1: AudioStreamPlayer = $"../../attack1"
 
+		
 func state_process(delta):
 	if(!character.is_on_floor() && timer.is_stopped):
 		next_state = air_state

@@ -9,6 +9,8 @@ class_name AirState
 @onready var sfx_jump: AudioStreamPlayer = $"../../SFXJump"
 @onready var sfx_jump_2: AudioStreamPlayer = $"../../SFXJump2"
 @onready var landing: AudioStreamPlayer = $"../../Landing"
+@onready var dust = preload("res://particles/Land_Particles.tscn")
+@onready var marker: Marker2D = $"../../Marker2D"
 
 var has_double_jumped = false
 
@@ -23,6 +25,8 @@ func state_input(event : InputEvent):
 
 func on_exit():
 	if(next_state == landing_state):
+		var instance = dust.instantiate()
+		instance = marker.global_position
 		landing.play()
 		playback.travel(landing_animation)
 		has_double_jumped = false

@@ -104,6 +104,7 @@ grow_vertical = 2
 script = ExtResource("1_umtxf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_otd1y")
 layout_mode = 1
 anchors_preset = 15

@@ -4,7 +4,7 @@ class_name Player
 
 @export var character : CharacterBody2D
 @onready var run: AudioStreamPlayer = $Run
-@export var speed : float = 200.0
+@export var speed : float = 130.0
 @onready var sfx_jump: AudioStreamPlayer = $SFXJump
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var animation_tree : AnimationTree = $AnimationTree

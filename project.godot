@@ -23,7 +23,7 @@ SignalBus="*res://signal_bus.gd"
 
 window/size/mode=4
 window/stretch/scale=4.0
-mouse_cursor/custom_image="res://Cursor Pointer.png"
+mouse_cursor/custom_image="res://Art/Random/Cursor Pointer.png"
 
 [file_customization]
 

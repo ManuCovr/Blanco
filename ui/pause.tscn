@@ -12,16 +12,16 @@ shader_parameter/lod = 0.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkirl"]
 bg_color = Color(0.203922, 0.14902, 0.113725, 0.843137)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
 border_color = Color(0.0451217, 0.0135419, 0.0123347, 1)
 border_blend = true
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfmmb"]
 
@@ -120,40 +120,38 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -74.0
-offset_top = -74.5
-offset_right = 74.0
-offset_bottom = 74.5
+offset_left = -257.0
+offset_top = -258.5
+offset_right = 257.0
+offset_bottom = 258.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bkirl")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = -60.0
-offset_right = 70.0
-offset_bottom = 60.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 32
+alignment = 1
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.1078, 0.0222084, 0.0229957, 1)
 theme_override_fonts/font = ExtResource("2_fl7ry")
-theme_override_font_sizes/font_size = 24
-text = "-- PAUSE --"
+theme_override_font_sizes/font_size = 64
+text = "-- PAUSE --
+"
 horizontal_alignment = 1
 
 [node name="resume" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
 theme_override_fonts/font = ExtResource("2_fl7ry")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nfmmb")
 text = "RESUME"
 flat = true
@@ -162,7 +160,7 @@ flat = true
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
 theme_override_fonts/font = ExtResource("2_fl7ry")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_583ag")
 text = "RESTART"
 flat = true
@@ -171,7 +169,7 @@ flat = true
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
 theme_override_fonts/font = ExtResource("2_fl7ry")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_e2r2f")
 text = "OPTIONS"
 flat = true
@@ -180,7 +178,7 @@ flat = true
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
 theme_override_fonts/font = ExtResource("2_fl7ry")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_j1hfn")
 text = "EXIT THE GAME"
 flat = true
@@ -194,10 +192,12 @@ libraries = {
 stream = ExtResource("4_iiefv")
 volume_db = 4.0
 pitch_scale = 0.8
+bus = &"UI Sounds"
 
 [node name="press" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_vvqtv")
 volume_db = -6.0
+bus = &"UI Sounds"
 
 [connection signal="mouse_entered" from="Panel/VBoxContainer/resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/resume" to="." method="_on_resume_pressed"]

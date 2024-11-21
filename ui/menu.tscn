@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://wjfw4tegj1bi"]
 
 [ext_resource type="Script" path="res://ui/menu.gd" id="1_ylvjb"]
+[ext_resource type="VideoStream" path="res://Overlap/76aa24bf1e433a13444c18c5df7b839b.ogv" id="2_5rcjh"]
 [ext_resource type="FontFile" uid="uid://c61hu64w8hokj" path="res://Art/Random/Qapixa-5y9Pa.ttf" id="3_t8pqg"]
 [ext_resource type="PackedScene" uid="uid://bh7uxnxwperty" path="res://ui/fade.tscn" id="4_yfm6m"]
 [ext_resource type="PackedScene" uid="uid://c5w2ol0srjdjh" path="res://ui/settings.tscn" id="5_7jr1b"]
 [ext_resource type="AudioStream" uid="uid://cb8wqvwq1pxtn" path="res://audio/music/mp3/Pixel 2.mp3" id="6_3rfd3"]
 [ext_resource type="AudioStream" uid="uid://byyaejm3n1thr" path="res://audio/sounds/25_orc_walk_stone_2.wav" id="7_j7y0j"]
 [ext_resource type="AudioStream" uid="uid://dm8r3cm2kmj40" path="res://audio/sounds/selec.mp3" id="8_nbp2j"]
-[ext_resource type="VideoStream" path="res://Overlap/4abfb3df89a9ce6418e7794fbb74eb7a.ogv" id="9_82nl0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uulbp"]
 
@@ -31,21 +31,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("9_82nl0")
+stream = ExtResource("2_5rcjh")
 autoplay = true
 loop = true
 
 [node name="LinkButton" type="LinkButton" parent="."]
 layout_mode = 0
-offset_left = -1.0
-offset_top = 9.0
-offset_right = 107.0
-offset_bottom = 21.0
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 422.0
+offset_bottom = 59.0
 theme_override_colors/font_hover_color = Color(0.211921, 0.647538, 0.739642, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_t8pqg")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 40
 text = "   My GitHub Page   "
 underline = 2
 uri = "https://github.com/ManuCovr"
@@ -60,9 +60,9 @@ offset_right = 146.0
 offset_bottom = 44.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
+theme_override_constants/outline_size = 16
 theme_override_fonts/font = ExtResource("3_t8pqg")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 160
 text = "
 Blanco"
 horizontal_alignment = 1
@@ -73,8 +73,8 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -101.0
-offset_right = 152.0
+offset_top = -483.0
+offset_right = 549.0
 grow_vertical = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -82,14 +82,15 @@ custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 32
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.875379, 0.791964, 0.364438, 1)
 theme_override_colors/font_focus_color = Color(0.87451, 0.792157, 0.364706, 1)
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_t8pqg")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 52
 theme_override_styles/focus = SubResource("StyleBoxEmpty_uulbp")
 text = "Start
 "
@@ -99,9 +100,9 @@ flat = true
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
 theme_override_colors/font_focus_color = Color(0.87451, 0.792157, 0.364706, 1)
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_t8pqg")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 52
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ggd22")
 text = "Options"
 flat = true
@@ -110,9 +111,9 @@ flat = true
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
 theme_override_colors/font_focus_color = Color(0.87451, 0.792157, 0.364706, 1)
-theme_override_constants/outline_size = 2
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_t8pqg")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 52
 theme_override_styles/focus = SubResource("StyleBoxEmpty_iuac1")
 text = "Quit
 "
@@ -132,15 +133,18 @@ layout_mode = 1
 stream = ExtResource("6_3rfd3")
 volume_db = -16.0
 autoplay = true
+bus = &"Music"
 
 [node name="hover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_j7y0j")
 volume_db = 1.0
 pitch_scale = 0.8
+bus = &"UI Sounds"
 
 [node name="press" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_nbp2j")
 volume_db = -8.0
+bus = &"UI Sounds"
 
 [connection signal="focus_entered" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_focus_entered"]
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_mouse_entered"]

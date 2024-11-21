@@ -587,26 +587,32 @@ facing_right_position = Vector2(32, -6)
 stream = ExtResource("14_pawa5")
 volume_db = -6.0
 pitch_scale = 0.61
+bus = &"SFX"
 
 [node name="SFXJump2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_shf4n")
 volume_db = -6.0
 pitch_scale = 0.61
+bus = &"SFX"
 
 [node name="attack1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_pbrq5")
 volume_db = -8.0
+bus = &"SFX"
 
 [node name="attack2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_esjxu")
 volume_db = -8.0
+bus = &"SFX"
 
 [node name="Landing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_sww4a")
 volume_db = -8.0
+bus = &"SFX"
 
 [node name="Run" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_iwtk2")
+bus = &"SFX"
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, 21)

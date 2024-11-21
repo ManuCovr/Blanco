@@ -25,8 +25,6 @@ func state_input(event : InputEvent):
 
 func on_exit():
 	if(next_state == landing_state):
-		var instance = dust.instantiate()
-		instance = marker.global_position
 		landing.play()
 		playback.travel(landing_animation)
 		has_double_jumped = false

@@ -35,6 +35,21 @@ stream = ExtResource("9_82nl0")
 autoplay = true
 loop = true
 
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 9.0
+offset_right = 107.0
+offset_bottom = 21.0
+theme_override_colors/font_hover_color = Color(0.211921, 0.647538, 0.739642, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_t8pqg")
+theme_override_font_sizes/font_size = 10
+text = "   My GitHub Page   "
+underline = 2
+uri = "https://github.com/ManuCovr"
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -71,6 +86,7 @@ size_flags_vertical = 4
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.875379, 0.791964, 0.364438, 1)
+theme_override_colors/font_focus_color = Color(0.87451, 0.792157, 0.364706, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_t8pqg")
 theme_override_font_sizes/font_size = 12
@@ -82,6 +98,7 @@ flat = true
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
+theme_override_colors/font_focus_color = Color(0.87451, 0.792157, 0.364706, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_t8pqg")
 theme_override_font_sizes/font_size = 12
@@ -92,6 +109,7 @@ flat = true
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
+theme_override_colors/font_focus_color = Color(0.87451, 0.792157, 0.364706, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_t8pqg")
 theme_override_font_sizes/font_size = 12
@@ -124,10 +142,13 @@ pitch_scale = 0.8
 stream = ExtResource("8_nbp2j")
 volume_db = -8.0
 
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_focus_entered"]
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_focus_entered"]
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_focus_entered"]
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="timeout" from="fade/Timer" to="." method="_on_timer_timeout"]

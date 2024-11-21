@@ -3,6 +3,10 @@ extends Control
 @export var game_manager: GameManager
 @onready var press: AudioStreamPlayer = $press
 @onready var hover: AudioStreamPlayer = $hover
+@onready var resume: Button = $Panel/VBoxContainer/resume
+@onready var restart: Button = $Panel/VBoxContainer/restart
+@onready var options: Button = $Panel/VBoxContainer/options
+@onready var exit: Button = $Panel/VBoxContainer/exit
 
 func _ready():
 	hide()

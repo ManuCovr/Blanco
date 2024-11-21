@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dgk0lfymfvsoi" path="res://Art/Legacy-Fantasy - High Forest 2.3/Background/back.png" id="4_27qjw"]
 [ext_resource type="Texture2D" uid="uid://bb8kwgoks320d" path="res://Art/Legacy-Fantasy - High Forest 2.3/Background/middle.png" id="5_7x3vu"]
 [ext_resource type="Texture2D" uid="uid://dg0l0gkbpkwc7" path="res://Assets/Hive.png" id="6_5tgjw"]
-[ext_resource type="Texture2D" uid="uid://c5x18d5q8cu1n" path="res://Wooden Pixel Art GUI 32x32(2).png" id="7_qio1k"]
-[ext_resource type="FontFile" uid="uid://c61hu64w8hokj" path="res://Qapixa-5y9Pa.ttf" id="8_gymti"]
+[ext_resource type="Texture2D" uid="uid://c5x18d5q8cu1n" path="res://Art/Random/Wooden Pixel Art GUI 32x32(2).png" id="7_qio1k"]
+[ext_resource type="FontFile" uid="uid://c61hu64w8hokj" path="res://Art/Random/Qapixa-5y9Pa.ttf" id="8_gymti"]
 [ext_resource type="PackedScene" uid="uid://xxaoff7gwbrm" path="res://Character/player.tscn" id="9_8ppga"]
 [ext_resource type="PackedScene" uid="uid://b0lnir3i6k0oq" path="res://Character/enemies/snail/snail.tscn" id="10_lh75d"]
 [ext_resource type="PackedScene" uid="uid://bjgkk1cesmra6" path="res://ui/hp_manager.tscn" id="11_gkuya"]
@@ -1923,3 +1923,5 @@ position = Vector2(270, 79)
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="Pause" parent="CanvasLayer2" instance=ExtResource("12_45j4v")]
+size_flags_horizontal = 4
+size_flags_vertical = 4

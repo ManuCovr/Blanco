@@ -61,3 +61,12 @@ func _on_options_mouse_entered() -> void:
 
 func _on_quit_mouse_entered() -> void:
 	hover.play()
+
+func _on_play_focus_entered() -> void:
+	hover.play()
+
+func _on_options_focus_entered() -> void:
+	hover.play()
+
+func _on_quit_focus_entered() -> void:
+	hover.play()

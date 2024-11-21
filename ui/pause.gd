@@ -33,7 +33,7 @@ func _on_restart_pressed() -> void:
 	game_manager.game_paused = false
 	hover.stop()
 	press.play()
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Levels/test_level.tscn")
 
 
 func _on_options_pressed() -> void:

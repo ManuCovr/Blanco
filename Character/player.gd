@@ -22,7 +22,7 @@ func _ready():
 	animation_tree.active = true
 
 func _physics_process(delta):
-	# Add the gravity.
+	# Add the gravity.velocity.y += gravity * delta
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	# Get the input direction and handle the movement/deceleration.

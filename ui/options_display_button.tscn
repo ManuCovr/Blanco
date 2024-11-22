@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2k3k4au31rbx"]
+
+[ext_resource type="FontFile" uid="uid://c61hu64w8hokj" path="res://Art/Random/Qapixa-5y9Pa.ttf" id="1_e1s70"]
+[ext_resource type="Theme" uid="uid://cwsatf2oedrc3" path="res://ui/dropdown.tres" id="2_osltu"]
+
+[node name="Options_Display_Button" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 160
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(264, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.792157, 0.364706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_e1s70")
+theme_override_font_sizes/font_size = 32
+text = "Base"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(512, 64)
+layout_mode = 2
+theme = ExtResource("2_osltu")
+alignment = 1

@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bb4k538n2iecq"]
+[gd_scene load_steps=13 format=3 uid="uid://bb4k538n2iecq"]
 
 [ext_resource type="PackedScene" uid="uid://dixqtmcqv1qaf" path="res://ui/hot_key_rebind_button.tscn" id="1_dlcmf"]
 [ext_resource type="FontFile" uid="uid://c61hu64w8hokj" path="res://Art/Random/Qapixa-5y9Pa.ttf" id="1_lemw5"]
+[ext_resource type="PackedScene" uid="uid://c7g2ue8eienux" path="res://ui/window_mode_button.tscn" id="2_182uj"]
+[ext_resource type="PackedScene" uid="uid://dghn7wot2x4nl" path="res://ui/resolution_mode_button.tscn" id="3_nkgg7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0y6w"]
 bg_color = Color(0.203922, 0.14902, 0.113725, 0.843137)
@@ -72,7 +74,7 @@ theme = SubResource("Theme_iemj2")
 theme_override_fonts/font = ExtResource("1_lemw5")
 theme_override_font_sizes/font_size = 24
 tab_alignment = 1
-current_tab = 2
+current_tab = 1
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
 visible = false
@@ -117,7 +119,6 @@ layout_mode = 2
 text = "123456"
 
 [node name="Video" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -133,32 +134,21 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Video/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Video/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Video/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Video/MarginContainer/ScrollContainer"]
 layout_mode = 2
-text = "123456"
+theme_override_constants/separation = 128
 
-[node name="Label2" type="Label" parent="TabContainer/Video/MarginContainer/VBoxContainer"]
+[node name="Window_Mode_Button" parent="TabContainer/Video/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_182uj")]
 layout_mode = 2
-text = "123456"
 
-[node name="Label3" type="Label" parent="TabContainer/Video/MarginContainer/VBoxContainer"]
+[node name="Resolution_Mode_Button" parent="TabContainer/Video/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_nkgg7")]
 layout_mode = 2
-text = "123456"
-
-[node name="Label4" type="Label" parent="TabContainer/Video/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123456"
-
-[node name="Label5" type="Label" parent="TabContainer/Video/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123456"
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 

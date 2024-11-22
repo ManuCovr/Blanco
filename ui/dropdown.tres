@@ -1,0 +1,36 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cwsatf2oedrc3"]
+
+[ext_resource type="FontFile" uid="uid://c61hu64w8hokj" path="res://Art/Random/Qapixa-5y9Pa.ttf" id="1_lesy0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1j25h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0xu7"]
+bg_color = Color(0.258824, 0.192157, 0.14902, 0.843137)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsnrh"]
+bg_color = Color(0.0627451, 0.0352941, 0.0235294, 0.913725)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ofve1"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[resource]
+resource_name = "DropDown"
+default_font = ExtResource("1_lesy0")
+default_font_size = 24
+OptionButton/fonts/font = ExtResource("1_lesy0")
+OptionButton/styles/focus = SubResource("StyleBoxEmpty_1j25h")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_a0xu7")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_xsnrh")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_ofve1")

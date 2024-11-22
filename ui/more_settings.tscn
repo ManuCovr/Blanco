@@ -1,9 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://bb4k538n2iecq"]
+[gd_scene load_steps=18 format=3 uid="uid://bb4k538n2iecq"]
 
 [ext_resource type="PackedScene" uid="uid://dixqtmcqv1qaf" path="res://ui/hot_key_rebind_button.tscn" id="1_dlcmf"]
 [ext_resource type="FontFile" uid="uid://c61hu64w8hokj" path="res://Art/Random/Qapixa-5y9Pa.ttf" id="1_lemw5"]
+[ext_resource type="Script" path="res://ui/more_settings.gd" id="1_uebi1"]
 [ext_resource type="PackedScene" uid="uid://c7g2ue8eienux" path="res://ui/window_mode_button.tscn" id="2_182uj"]
+[ext_resource type="PackedScene" uid="uid://mawfq2j84cs7" path="res://ui/audio_slider_settings.tscn" id="3_cbv67"]
+[ext_resource type="Theme" uid="uid://cwsatf2oedrc3" path="res://ui/dropdown.tres" id="3_dggfy"]
 [ext_resource type="PackedScene" uid="uid://dghn7wot2x4nl" path="res://ui/resolution_mode_button.tscn" id="3_nkgg7"]
+[ext_resource type="AudioStream" uid="uid://byyaejm3n1thr" path="res://audio/sounds/25_orc_walk_stone_2.wav" id="6_0u4fj"]
+[ext_resource type="AudioStream" uid="uid://dm8r3cm2kmj40" path="res://audio/sounds/selec.mp3" id="7_xmflf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0y6w"]
 bg_color = Color(0.203922, 0.14902, 0.113725, 0.843137)
@@ -22,12 +27,19 @@ corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fid3v"]
 bg_color = Color(0.203922, 0.14902, 0.113725, 0.843137)
+border_width_left = 5
+border_width_top = 3
+border_width_right = 5
+border_color = Color(0.101961, 0.0823529, 0.0705882, 1)
+border_blend = true
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idiob"]
 bg_color = Color(0.223339, 0.170834, 0.14459, 1)
+border_width_left = 5
 border_width_top = 5
-border_color = Color(1, 1, 1, 1)
+border_width_right = 5
+border_color = Color(0.0831775, 0.0592576, 0.043303, 1)
 border_blend = true
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
@@ -37,6 +49,10 @@ shadow_offset = Vector2(0, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogran"]
 bg_color = Color(0.0674676, 0.0413118, 0.026073, 0.843137)
+border_width_left = 5
+border_width_top = 3
+border_width_right = 5
+border_color = Color(0.101961, 0.0823529, 0.0705882, 1)
 
 [sub_resource type="Theme" id="Theme_iemj2"]
 TabContainer/styles/panel = SubResource("StyleBoxFlat_k0y6w")
@@ -50,12 +66,14 @@ TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_ogran")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cve2m"]
 
 [node name="MoreSettings" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uebi1")
 
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 1
@@ -74,10 +92,9 @@ theme = SubResource("Theme_iemj2")
 theme_override_fonts/font = ExtResource("1_lemw5")
 theme_override_font_sizes/font_size = 24
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -98,27 +115,31 @@ layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Audio/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Audio/MarginContainer"]
 layout_mode = 2
-text = "123456"
 
-[node name="Label2" type="Label" parent="TabContainer/Audio/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Audio/MarginContainer/ScrollContainer"]
 layout_mode = 2
-text = "123456"
+theme = ExtResource("3_dggfy")
+theme_override_constants/separation = 100
 
-[node name="Label3" type="Label" parent="TabContainer/Audio/MarginContainer/VBoxContainer"]
+[node name="Audio_Slider_Settings" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_cbv67")]
 layout_mode = 2
-text = "123456"
+bus_name = "Master"
 
-[node name="Label4" type="Label" parent="TabContainer/Audio/MarginContainer/VBoxContainer"]
+[node name="Audio_Slider_Settings2" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_cbv67")]
 layout_mode = 2
-text = "123456"
+bus_name = "SFX"
 
-[node name="Label5" type="Label" parent="TabContainer/Audio/MarginContainer/VBoxContainer"]
+[node name="Audio_Slider_Settings3" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_cbv67")]
 layout_mode = 2
-text = "123456"
+
+[node name="Audio_Slider_Settings4" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_cbv67")]
+layout_mode = 2
+bus_name = "UI Sounds"
 
 [node name="Video" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -208,44 +229,13 @@ layout_mode = 2
 theme_override_constants/separation = 12
 theme_override_styles/separator = SubResource("StyleBoxEmpty_cve2m")
 
-[node name="Accessibility" type="TabBar" parent="TabContainer"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 3
+[node name="hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_0u4fj")
+volume_db = 1.0
+pitch_scale = 0.8
+bus = &"UI Sounds"
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Accessibility"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Accessibility/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
-
-[node name="Label" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123456"
-
-[node name="Label2" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123456"
-
-[node name="Label3" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123456"
-
-[node name="Label4" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123456"
-
-[node name="Label5" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123456"
+[node name="press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_xmflf")
+volume_db = -8.0
+bus = &"UI Sounds"

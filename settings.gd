@@ -2,6 +2,9 @@ extends Control
 
 class_name OptionsMenu
 @onready var exit: Button = $MarginContainer/VBoxContainer/exit
+@onready var hover: AudioStreamPlayer = $MarginContainer/VBoxContainer/MoreSettings/hover
+@onready var press: AudioStreamPlayer = $MarginContainer/VBoxContainer/MoreSettings/press
+@onready var tab_container: TabContainer = $MarginContainer/VBoxContainer/MoreSettings/TabContainer
 
 signal exit_menu
 

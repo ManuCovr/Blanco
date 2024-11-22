@@ -53,3 +53,7 @@ size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("2_b8p01")
 theme_override_font_sizes/font_size = 32
 text = "Exit"
+
+[connection signal="tab_selected" from="MarginContainer/VBoxContainer/MoreSettings/TabContainer" to="MarginContainer/VBoxContainer/MoreSettings" method="_on_tab_container_tab_selected"]
+
+[editable path="MarginContainer/VBoxContainer/MoreSettings"]

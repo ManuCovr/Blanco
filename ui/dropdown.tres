@@ -1,6 +1,12 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cwsatf2oedrc3"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cwsatf2oedrc3"]
 
 [ext_resource type="FontFile" uid="uid://c61hu64w8hokj" path="res://Art/Random/Qapixa-5y9Pa.ttf" id="1_lesy0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bb4ew"]
+bg_color = Color(0.539333, 0.480041, 0.163284, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifruh"]
+bg_color = Color(0.87451, 0.792157, 0.364706, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1j25h"]
 
@@ -29,6 +35,9 @@ corner_radius_bottom_left = 10
 resource_name = "DropDown"
 default_font = ExtResource("1_lesy0")
 default_font_size = 24
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_bb4ew")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_ifruh")
+Label/colors/font_color = Color(0.87451, 0.792157, 0.364706, 1)
 OptionButton/fonts/font = ExtResource("1_lesy0")
 OptionButton/styles/focus = SubResource("StyleBoxEmpty_1j25h")
 OptionButton/styles/hover = SubResource("StyleBoxFlat_a0xu7")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://du7s6m5lqjhn2"]
+[gd_scene load_steps=14 format=3 uid="uid://du7s6m5lqjhn2"]
 
 [ext_resource type="Script" path="res://ui/pause.gd" id="1_umtxf"]
 [ext_resource type="FontFile" uid="uid://c61hu64w8hokj" path="res://Art/Random/Qapixa-5y9Pa.ttf" id="2_fl7ry"]
@@ -26,8 +26,6 @@ corner_radius_bottom_left = 40
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfmmb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_583ag"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2r2f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1hfn"]
 
@@ -165,15 +163,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_583ag")
 text = "RESTART"
 flat = true
 
-[node name="options" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
-theme_override_fonts/font = ExtResource("2_fl7ry")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_e2r2f")
-text = "OPTIONS"
-flat = true
-
 [node name="exit" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.87451, 0.792157, 0.364706, 1)
@@ -203,7 +192,5 @@ bus = &"UI Sounds"
 [connection signal="pressed" from="Panel/VBoxContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="mouse_entered" from="Panel/VBoxContainer/restart" to="." method="_on_restart_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/restart" to="." method="_on_restart_pressed"]
-[connection signal="mouse_entered" from="Panel/VBoxContainer/options" to="." method="_on_options_mouse_entered"]
-[connection signal="pressed" from="Panel/VBoxContainer/options" to="." method="_on_options_pressed"]
 [connection signal="mouse_entered" from="Panel/VBoxContainer/exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/exit" to="." method="_on_exit_pressed"]

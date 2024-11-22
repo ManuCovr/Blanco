@@ -1,8 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://dixqtmcqv1qaf"]
+[gd_scene load_steps=8 format=3 uid="uid://dixqtmcqv1qaf"]
 
 [ext_resource type="Script" path="res://ui/hot_key_rebind_button.gd" id="1_lt0hg"]
+[ext_resource type="FontFile" uid="uid://c61hu64w8hokj" path="res://Art/Random/Qapixa-5y9Pa.ttf" id="2_yn7i8"]
 
-[node name="HotKey_Rebind_Button" type="Control"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_arfnv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ds7ys"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjouc"]
+bg_color = Color(0.259206, 0.192922, 0.150327, 0.843137)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pb8y6"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtnun"]
+bg_color = Color(0.0625154, 0.0368761, 0.0233183, 0.913725)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="HotKey_Rebind_Button" type="Control" groups=["hotkey_button"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,6 +51,10 @@ alignment = 1
 [node name="Label" type="Label" parent="HBoxContainer"]
 custom_minimum_size = Vector2(400, 30)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.792157, 0.364706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_yn7i8")
 theme_override_font_sizes/font_size = 32
 text = "Action"
 vertical_alignment = 1
@@ -33,8 +63,17 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 200
+theme_override_styles/separator = SubResource("StyleBoxEmpty_arfnv")
 
 [node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yn7i8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ds7ys")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wjouc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pb8y6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dtnun")
 toggle_mode = true
 text = "Action Key"
+
+[connection signal="toggled" from="HBoxContainer/Button" to="." method="_on_button_toggled"]

@@ -1,6 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb4k538n2iecq"]
+[gd_scene load_steps=11 format=3 uid="uid://bb4k538n2iecq"]
 
 [ext_resource type="PackedScene" uid="uid://dixqtmcqv1qaf" path="res://ui/hot_key_rebind_button.tscn" id="1_dlcmf"]
+[ext_resource type="FontFile" uid="uid://c61hu64w8hokj" path="res://Art/Random/Qapixa-5y9Pa.ttf" id="1_lemw5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0y6w"]
+bg_color = Color(0.203922, 0.14902, 0.113725, 0.843137)
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color(0.11, 0.0801533, 0.0616, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_otnlc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fid3v"]
+bg_color = Color(0.203922, 0.14902, 0.113725, 0.843137)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idiob"]
+bg_color = Color(0.223339, 0.170834, 0.14459, 1)
+border_width_top = 5
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.501961)
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogran"]
+bg_color = Color(0.0674676, 0.0413118, 0.026073, 0.843137)
+
+[sub_resource type="Theme" id="Theme_iemj2"]
+TabContainer/styles/panel = SubResource("StyleBoxFlat_k0y6w")
+TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_otnlc")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_fid3v")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_idiob")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_ogran")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48x28"]
 
@@ -27,6 +68,9 @@ offset_right = 653.0
 offset_bottom = 353.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_iemj2")
+theme_override_fonts/font = ExtResource("1_lemw5")
+theme_override_font_sizes/font_size = 24
 tab_alignment = 1
 current_tab = 2
 

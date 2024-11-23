@@ -1,7 +1,6 @@
-[gd_scene load_steps=32 format=4 uid="uid://jgkuhive8qva"]
+[gd_scene load_steps=31 format=4 uid="uid://jgkuhive8qva"]
 
 [ext_resource type="Script" path="res://Levels/GameManager.gd" id="1_033tj"]
-[ext_resource type="Script" path="res://Levels/test_level.gd" id="2_3wkhe"]
 [ext_resource type="Texture2D" uid="uid://cnb6vef35n3ad" path="res://Assets/Tiles.png" id="3_8jehw"]
 [ext_resource type="Texture2D" uid="uid://cw03cyq3lqpw1" path="res://Art/Legacy-Fantasy - High Forest 2.3/Trees/Background.png" id="4_kco2r"]
 [ext_resource type="Texture2D" uid="uid://dgk0lfymfvsoi" path="res://Art/Legacy-Fantasy - High Forest 2.3/Background/back.png" id="5_gnvym"]
@@ -3028,7 +3027,6 @@ script = ExtResource("1_033tj")
 
 [node name="TestLevel" type="Node2D" parent="."]
 process_mode = 1
-script = ExtResource("2_3wkhe")
 
 [node name="TileMap" type="TileMap" parent="TestLevel"]
 tile_set = SubResource("TileSet_co2n3")

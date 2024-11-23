@@ -12,4 +12,4 @@ func _on_body_exited(body: Player) -> void:
 func _process(delta):
 	if entered == true:
 		if(Input.is_action_pressed("interact")):
-			get_tree().change_scene_to_file("res://Levels/test_level.tscn")
+			get_tree().change_scene_to_file("res://Levels/world3.tscn")
